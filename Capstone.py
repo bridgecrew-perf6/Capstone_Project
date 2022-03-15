@@ -56,9 +56,9 @@ def main():
 
 
     st.header("Approach 1:")
-    st.header("Experimentation to determine threshold if average mean is used as criteria for classificatio. Threshold selected from several iterations is 0.70 (cracked image is less than 0.7 and no crack is greater than 0.7")
+    st.header("Experimentation to determine threshold if average mean is used as criteria for classificatio. Threshold selected from several iterations is 0.75 (cracked image is less than 0.7 and no crack is greater than 0.7")
     #Threshold testing and use in classification based on average pixel Intensity
-    if img_mean < 0.7:
+    if img_mean < 0.75:
       st.write("Prediction: This concrete has a crack")
     else:
       st.write("Prediction: This concrete has no crack")
@@ -71,14 +71,14 @@ def main():
     
     #Subtract pixels
     img_centered = img_normalized - img_mean
-    mean_centered = mean(img_centered)
-    st.write(mean_centered)
-    plt.hist(mean_centered)
+    #mean_centered = mean(img_centered)
+    st.write(img_centered)
+    plt.hist(img_centered)
     st.text('Distribution of mean centered pixel intensities')
     st.pyplot(fig)
 
     #Threshold condition for image centering classification
-    if mean_centered > 0:
+    if img_centered > 0.2:
       st.write("Prediction: This concrete has a crack")
     else:
       st.write("Prediction: This concrete has no crack")
