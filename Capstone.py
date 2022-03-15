@@ -76,15 +76,18 @@ def main():
     #Subtract pixels
     img_mean = img_normalized.mean()
     img_centered = img_normalized - img_mean
-    mean_centered = img_centered
+    max_centered = img_centered.max()
     
-    st.write(mean_centered)
-    plt.hist(mean_centered)
-    st.text('Distribution of mean centered pixel intensities')
+    st.write("The max of centered image is: ")
+    
+    st.write(max_centered)
+    plt.hist(max_centered)
+    st.text('Distribution of max centered pixel intensities')
     st.pyplot(fig)
+    
 
     #Threshold condition for image centering classification
-    if mean_centered > 0.2:
+    if max_centered > 0.4:
       st.write("Prediction: This concrete has a crack")
     else:
       st.write("Prediction: This concrete has no crack")
