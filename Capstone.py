@@ -87,7 +87,7 @@ def main():
     
 
     #Threshold condition for image centering classification
-    if max_centered > 0.4:
+    if max_centered < 0.4:
       st.write("Prediction: This concrete has a crack")
     else:
       st.write("Prediction: This concrete has no crack")
