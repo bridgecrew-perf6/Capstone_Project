@@ -83,7 +83,7 @@ def main():
     st.write(max_centered)
     plt.hist(max_centered)
     st.text('Distribution of max centered pixel intensities')
-    st.pyplot(fig1)
+    st.pyplot(fig)
     
 
     #Threshold condition for image centering classification
