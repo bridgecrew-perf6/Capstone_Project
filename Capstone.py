@@ -69,6 +69,10 @@ def main():
     st.header("Approach 2:")
     st.header("Classifying crack versus no crack based on pixel centering: Each pixel value is subtracted from mean pixel value to determine if image is a crack or not")
     
+    #Normalize crack image
+    gray_array = gray.astype(np.float64)
+    img_normalized = gray_array/255.0
+    
     #Subtract pixels
     img_mean = img_normalized.mean()
     img_centered = img_normalized - img_mean
