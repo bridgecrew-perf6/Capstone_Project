@@ -76,7 +76,7 @@ def main():
     #Subtract pixels
     img_mean = img_normalized.mean()
     img_centered = img_normalized - img_mean
-    mean_centered = mean(img_centered)
+    mean_centered = img_centered.mean()
     
     st.write(mean_centered)
     plt.hist(mean_centered)
