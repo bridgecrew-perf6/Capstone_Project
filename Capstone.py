@@ -49,7 +49,7 @@ def main():
     #Perform pixel subtraction across all images
     img_mean = img_normalized.mean()
     st.write(img_mean)
-    plt.hist(img_normalized)
+    plt.imshow(img_normalized, cmap="gray")
     st.pyplot(fig)
 
 
@@ -60,7 +60,7 @@ def main():
       st.write("Prediction: This concrete has a crack")
     else:
       st.write("Prediction: This concrete has no crack")
-    plt.hist(img_mean)
+    plt.imshow(img)
     st.text('Predicted Image')
     st.pyplot(fig)
     
@@ -74,12 +74,13 @@ def main():
     #Subtract pixels
     img_mean = img_normalized.mean()
     img_centered = img_normalized - img_mean
-    max_centered = img_centered.max()
+    max_centered = img_centered.imshow(img_normalized,cmap='gray')max()
     
     st.write("The max of centered image is: ")
     
     st.write(max_centered)
     plt.hist(max_centered)
+    plt.imshow(img, cmap="gray")
     st.text('Distribution of max centered pixel intensities')
     st.pyplot(fig)
     
