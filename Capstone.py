@@ -12,7 +12,6 @@ from numpy.core.fromnumeric import mean
 import streamlit as st 
 from PIL import Image
 fig = plt.figure()
-fig1= plt.figure()
 
 #with open("customs.css") as f:
     #st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
@@ -45,10 +44,6 @@ def main():
     gray_array = gray.astype(np.float64)
     img_normalized = gray_array/255.0
 
-    plt.hist(img_normalized)
-    st.text('Distribution of pixel intensities')
-    st.pyplot(fig)
-
     st.write("The mean of normalized image is: ")
     
     #Perform pixel subtraction across all images
@@ -65,7 +60,7 @@ def main():
       st.write("Prediction: This concrete has no crack")
     plt.imshow(img_normalized,cmap='gray')
     st.text('Predicted Image')
-    st.pyplot(fig)
+    st.pyplot(fig1)
     
     st.header("Approach 2:")
     st.header("Classifying crack versus no crack based on pixel centering: Each pixel value is subtracted from mean pixel value to determine if image is a crack or not")
@@ -82,9 +77,9 @@ def main():
     st.write("The max of centered image is: ")
     
     st.write(max_centered)
-    fig1 = plt.hist(max_centered)
+    plt.hist(max_centered)
     st.text('Distribution of max centered pixel intensities')
-    st.pyplot(fig1)
+    st.pyplot(fig2)
     
 
     #Threshold condition for image centering classification
