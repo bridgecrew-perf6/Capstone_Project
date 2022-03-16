@@ -12,6 +12,7 @@ from numpy.core.fromnumeric import mean
 import streamlit as st 
 from PIL import Image
 fig = plt.figure()
+fig1= plt.figure()
 
 #with open("customs.css") as f:
     #st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
