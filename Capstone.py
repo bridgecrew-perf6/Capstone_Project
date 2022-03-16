@@ -79,7 +79,6 @@ def main():
     st.write("The max of centered image is: ")
     
     st.write(max_centered)
-    plt.hist(max_centered)
     plt.imshow(img, cmap="gray")
     st.text('Distribution of max centered pixel intensities')
     st.pyplot(fig)
