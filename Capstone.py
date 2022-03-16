@@ -49,7 +49,7 @@ def main():
     #Perform pixel subtraction across all images
     img_mean = img_normalized.mean()
     st.write(img_mean)
-    plt.imshow(img_normalized, cmap="gray")
+    plt.hist(img_normalized)
     st.pyplot(fig)
 
 
@@ -74,7 +74,7 @@ def main():
     #Subtract pixels
     img_mean = img_normalized.mean()
     img_centered = img_normalized - img_mean
-    max_centered = img_centered.imshow(img_normalized,cmap='gray')max()
+    max_centered = img_centered.max()
     
     st.write("The max of centered image is: ")
     
