@@ -49,6 +49,8 @@ def main():
     #Perform pixel subtraction across all images
     img_mean = img_normalized.mean()
     st.write(img_mean)
+    plt.imshow(img_normalized, cmap='gray')
+    st.pyplot(fig)
 
 
     st.header("Approach 1:")
