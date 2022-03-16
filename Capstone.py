@@ -49,7 +49,7 @@ def main():
     #Perform pixel subtraction across all images
     img_mean = img_normalized.mean()
     st.write(img_mean)
-    plt.imshow(img_normalized, cmap='gray')
+    plt.hist(img_normalized)
     st.pyplot(fig)
 
 
@@ -60,7 +60,7 @@ def main():
       st.write("Prediction: This concrete has a crack")
     else:
       st.write("Prediction: This concrete has no crack")
-    plt.imshow(img_normalized,cmap='gray')
+    plt.hist(img_mean)
     st.text('Predicted Image')
     st.pyplot(fig)
     
