@@ -60,7 +60,7 @@ def main():
       st.write("Prediction: This concrete has no crack")
     plt.imshow(img_normalized,cmap='gray')
     st.text('Predicted Image')
-    st.pyplot(fig1)
+    st.pyplot(fig)
     
     st.header("Approach 2:")
     st.header("Classifying crack versus no crack based on pixel centering: Each pixel value is subtracted from mean pixel value to determine if image is a crack or not")
@@ -79,7 +79,7 @@ def main():
     st.write(max_centered)
     plt.hist(max_centered)
     st.text('Distribution of max centered pixel intensities')
-    st.pyplot(fig2)
+    st.pyplot(fig)
     
 
     #Threshold condition for image centering classification
