@@ -81,9 +81,9 @@ def main():
     st.write("The max of centered image is: ")
     
     st.write(max_centered)
-    plt.hist(max_centered)
+    fig1 = plt.hist(max_centered)
     st.text('Distribution of max centered pixel intensities')
-    st.pyplot(fig)
+    st.pyplot(fig1)
     
 
     #Threshold condition for image centering classification
@@ -92,19 +92,7 @@ def main():
     else:
       st.write("Prediction: This concrete has no crack")
 
-    st.header("Conclusion")
-    st.write("There were two approaches used in this model, the first was to measure the average pixel difference between the crack image and the no crack based on experimentation in jupyter notebook")
-    st.write("The second approach was to subtract the pixel values from the mean and center the image. A threshold was also decided based on the centering to differentiate crack versus no crack")     
-    st.write("I ran 5 images from the original dataset through the model on both techniques")
-    st.write("I passed 5 images through the mean method and obtained 5 correctly classified(100%)")
-    st.write("I passed the same 5 images through the pixel centering method and obtained 80% accuracy")
-    st.write("However, external data unrelated to the datset gave a 60% accuracy for the average pixel method")
-    st.write("And the pixel centering method was only 40% accurate")
-    st.write("I discovered that the threshold does not generalize well on external data. This could be due to image resolution(quality of camera) as I observed.")
-    st.write("The second approach does not generalize well to external images as well")
-    st.write("The selection of the threshold will require more experimentation and additional image processing techniques.")
-    st.write("I believe the change in resolution of the dataset influenced the performance of the approach on external data")
-    st.header("References")
+    
     
 
 
